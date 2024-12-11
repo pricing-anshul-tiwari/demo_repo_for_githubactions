@@ -1,0 +1,9 @@
+name: 'Code Push to Main'
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code push to main
+        run: |
+          echo "Code push to main"
