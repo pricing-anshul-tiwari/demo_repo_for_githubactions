@@ -18,3 +18,4 @@ jobs:
           if [ ! -d "web" ]; then
             echo "Error: 'web' folder not found in the main branch."
             exit 1
+          fi
