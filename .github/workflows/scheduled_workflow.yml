@@ -1,6 +1,6 @@
 name: 'Scheduled workflow'
 on:
-  scehdule:
+  schedule:
     - cron: '*/2 * * * *'
 jobs:
   build:
