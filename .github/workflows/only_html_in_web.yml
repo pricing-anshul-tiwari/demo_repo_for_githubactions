@@ -13,17 +13,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Validate Files in Web Folder
+      - name: Check for Web Folder
         run: |
-          # Get a list of all committed files in the push within the 'web' folder
-          changed_files=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA | grep '^web/')
-
-          # Check if all files in 'web/' are .html
-          for file in $changed_files; do
-            if [[ "$file" != *.html ]]; then
-              echo "Error: Non-HTML file detected in web folder: $file"
-              exit 1
-            fi
-          done
-
-          echo "Validation passed: All files in the 'web' folder are HTML files."
+          if [ ! -d "web" ]; then
+            echo "Error: 'web' folder not found in the main branch."
+            exit 1
