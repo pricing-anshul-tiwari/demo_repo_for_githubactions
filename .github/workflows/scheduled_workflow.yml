@@ -1,0 +1,11 @@
+name: 'Scheduled workflow'
+on:
+  scehdule:
+    - cron: '*/2 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scheduled workflow
+        run: |
+          echo "Scheduled workflow"
